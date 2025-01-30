@@ -26,6 +26,10 @@ namespace DotNet8ConsoleApp.DapperCustomService
 	      BlogContent = @BlogContent 
 	  WHERE BlogId = @BlogId";
 
+		public static string DeleteBlogQuery { get; } =
+		@"UPDATE dbo.Tbl_Blog 
+		  SET DeleteFlag = 1 
+		  WHERE BlogId = @BlogId";
 
 	}
 }
