@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DotNet8ConsoleApp.DapperCustomService
 {
-	internal class CustomException
+	public class CustomException : Exception
 	{
+		public CustomException(string? message) : base(message) { }
 	}
 }
