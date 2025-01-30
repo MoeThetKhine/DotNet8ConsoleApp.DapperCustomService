@@ -17,7 +17,8 @@ namespace DotNet8ConsoleApp.DapperCustomService
   FROM [dbo].[Tbl_Blog] ORDER BY BlogId DESC";
 
 		public static string CreateBlogQuery { get; } =
-		"INSERT INTO dbo.Tbl_Blog (BlogTitle, BlogAuthor, BlogContent, DeleteFlag) VALUES (@BlogTitle, @BlogAuthor, @BlogContent, @DeleteFlag);";
+		"INSERT INTO dbo.Tbl_Blog (BlogTitle, BlogAuthor, BlogContent, DeleteFlag)" +
+			" VALUES (@BlogTitle, @BlogAuthor, @BlogContent, @DeleteFlag);";
 
 		public static string UpdateBlogQuery { get; } =
 		@"UPDATE dbo.Tbl_Blog 
