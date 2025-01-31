@@ -15,11 +15,15 @@ namespace DotNet8ConsoleApp.DapperCustomService
 		}
 		private IDbConnection CreateConnection() => new SqlConnection(_connectionString);
 
+		#region Query
+
 		public List<T> Query<T>(string query, object? parameters = null)
 		{
 			using var db = CreateConnection();
 			return db.Query<T>(query, parameters).ToList();
 		}
+
+		#endregion
 
 		public async Task<List<T>> QueryAsync<T>(string query, object? parameters = null)
 		{
