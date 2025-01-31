@@ -8,11 +8,13 @@ public class Program
 
 	public static async Task Main()
 	{
-		//await Read();
+		await Read();
 		//await Create("Sample Title", "Sample Author", "Sample Content", false);
-		await Update(1, "Updated Title", "Updated Author", "Updated Content");
+		//await Update(1, "Updated Title", "Updated Author", "Updated Content");
 		//await Delete(1);
 	}
+
+	#region Read
 
 	public static async Task Read()
 	{
@@ -33,6 +35,8 @@ public class Program
 			Console.WriteLine($"Error reading blogs: {ex.Message}");
 		}
 	}
+
+	#endregion
 
 	public static async Task Create(string title, string author, string content, bool deleteFlag)
 	{
