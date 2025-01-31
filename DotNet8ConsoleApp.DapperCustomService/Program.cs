@@ -1,4 +1,6 @@
-﻿namespace DotNet8ConsoleApp.DapperCustomService;
+﻿using System.Collections.Generic;
+
+namespace DotNet8ConsoleApp.DapperCustomService;
 
 public class Program
 {
@@ -18,11 +20,14 @@ public class Program
 	{
 		try
 		{
-			var blogs = await _dapperService.QueryAsync<BlogModel>(Query.GetAllBlogsQuery);
+			var lst = await _dapperService.QueryAsync<BlogModel>(Query.GetAllBlogsQuery);
 
-			foreach (var blog in blogs)
+			foreach (var item in lst)
 			{
-				Console.WriteLine($"ID: {blog.BlogId}, Title: {blog.BlogTitle}, Author: {blog.BlogAuthor}");
+				Console.WriteLine($"Blog Id: {item.BlogId}");
+				Console.WriteLine($"Blog Title: {item.BlogTitle}");
+				Console.WriteLine($"Blog Author: {item.BlogAuthor}");
+				Console.WriteLine($"Blog Content: {item.BlogContent}");
 			}
 		}
 		catch (Exception ex)
