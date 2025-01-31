@@ -64,6 +64,8 @@ public class Program
 
 	#endregion
 
+	#region Update
+
 	public static async Task Update(long id, string title, string author, string content)
 	{
 		try
@@ -84,6 +86,8 @@ public class Program
 			Console.WriteLine($"Error updating blog: {ex.Message}");
 		}
 	}
+
+	#endregion
 
 	public static async Task Delete(int id)
 	{
