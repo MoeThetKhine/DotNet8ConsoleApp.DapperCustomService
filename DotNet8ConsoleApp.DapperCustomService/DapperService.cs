@@ -45,5 +45,11 @@ namespace DotNet8ConsoleApp.DapperCustomService
 			using var db = CreateConnection();
 			return db.Execute(sql, parameters);
 		}
+
+		public async Task<int> ExecuteAsync(string sql, object? parameters = null)
+		{
+			using var db = CreateConnection();
+			return await db.ExecuteAsync(sql, parameters);
+		}
 	}
 }
