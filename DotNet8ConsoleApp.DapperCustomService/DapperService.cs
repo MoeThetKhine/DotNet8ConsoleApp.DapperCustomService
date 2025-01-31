@@ -1,9 +1,4 @@
-﻿using Dapper;
-using Microsoft.Data.SqlClient;
-using System.Data;
-
-
-namespace DotNet8ConsoleApp.DapperCustomService;
+﻿namespace DotNet8ConsoleApp.DapperCustomService;
 
 public class DapperService
 {
