@@ -89,6 +89,8 @@ public class Program
 
 	#endregion
 
+	#region Delete
+
 	public static async Task Delete(int id)
 	{
 		try
@@ -104,5 +106,6 @@ public class Program
 		}
 	}
 
+	#endregion
 
 }
