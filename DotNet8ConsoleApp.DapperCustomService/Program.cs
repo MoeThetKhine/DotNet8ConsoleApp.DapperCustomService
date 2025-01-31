@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace DotNet8ConsoleApp.DapperCustomService;
+﻿namespace DotNet8ConsoleApp.DapperCustomService;
 
 public class Program
 {
