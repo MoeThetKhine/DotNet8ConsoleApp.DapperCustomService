@@ -77,5 +77,20 @@ public class Program
 		}
 	}
 
+	public static async Task Delete(int id)
+	{
+		try
+		{
+			var parameters = new { BlogId = id };
+			int result = await _dapperService.ExecuteAsync(Query.DeleteBlogQuery, parameters);
+
+			Console.WriteLine(result > 0 ? "Delete Successful" : "Delete Failed");
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine($"Error deleting blog: {ex.Message}");
+		}
+	}
+
 
 }
