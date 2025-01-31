@@ -6,6 +6,8 @@ public class Program
 
 	private static readonly DapperService _dapperService = new(_connectionString);
 
+	#region Main
+
 	public static async Task Main()
 	{
 		await Read();
@@ -13,6 +15,8 @@ public class Program
 		//await Update(1, "Updated Title", "Updated Author", "Updated Content");
 		//await Delete(1);
 	}
+
+	#endregion
 
 	#region Read
 
