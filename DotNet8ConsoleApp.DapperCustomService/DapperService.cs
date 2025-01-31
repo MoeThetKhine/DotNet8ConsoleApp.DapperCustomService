@@ -56,16 +56,25 @@ namespace DotNet8ConsoleApp.DapperCustomService
 
 		#endregion
 
+		#region Execute
+
 		public int Execute(string sql, object? parameters = null)
 		{
 			using var db = CreateConnection();
 			return db.Execute(sql, parameters);
 		}
 
+		#endregion
+
+		#region ExecuteAsync
+
 		public async Task<int> ExecuteAsync(string sql, object? parameters = null)
 		{
 			using var db = CreateConnection();
 			return await db.ExecuteAsync(sql, parameters);
 		}
+
+		#endregion
+
 	}
 }
