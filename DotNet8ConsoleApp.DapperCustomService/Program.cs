@@ -8,8 +8,8 @@ public class Program
 
 	public static async Task Main()
 	{
-		await Read();
-		//await Create("Sample Title", "Sample Author", "Sample Content", false);
+		//await Read();
+		await Create("Sample Title", "Sample Author", "Sample Content", false);
 		//await Update(1, "Updated Title", "Updated Author", "Updated Content");
 		//await Delete(1);
 	}
@@ -31,6 +31,28 @@ public class Program
 		catch (Exception ex)
 		{
 			Console.WriteLine($"Error reading blogs: {ex.Message}");
+		}
+	}
+
+	public static async Task Create(string title, string author, string content, bool deleteFlag)
+	{
+		try
+		{
+			var parameters = new 
+			{
+				BlogTitle = title, 
+				BlogAuthor = author, 
+				BlogContent = content, 
+				DeleteFlag = deleteFlag 
+			};
+
+			int result = await _dapperService.ExecuteAsync(Query.CreateBlogQuery, parameters);
+
+			Console.WriteLine(result > 0 ? "Insert Successful" : "Insert Failed");
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine($"Error creating blog: {ex.Message}");
 		}
 	}
 
