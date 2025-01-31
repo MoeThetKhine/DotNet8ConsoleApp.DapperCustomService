@@ -38,6 +38,8 @@ public class Program
 
 	#endregion
 
+	#region Create
+
 	public static async Task Create(string title, string author, string content, bool deleteFlag)
 	{
 		try
@@ -59,6 +61,8 @@ public class Program
 			Console.WriteLine($"Error creating blog: {ex.Message}");
 		}
 	}
+
+	#endregion
 
 	public static async Task Update(long id, string title, string author, string content)
 	{
