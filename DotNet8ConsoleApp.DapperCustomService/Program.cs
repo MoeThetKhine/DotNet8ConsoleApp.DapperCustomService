@@ -9,8 +9,8 @@ public class Program
 	public static async Task Main()
 	{
 		//await Read();
-		await Create("Sample Title", "Sample Author", "Sample Content", false);
-		//await Update(1, "Updated Title", "Updated Author", "Updated Content");
+		//await Create("Sample Title", "Sample Author", "Sample Content", false);
+		await Update(1, "Updated Title", "Updated Author", "Updated Content");
 		//await Delete(1);
 	}
 
@@ -53,6 +53,27 @@ public class Program
 		catch (Exception ex)
 		{
 			Console.WriteLine($"Error creating blog: {ex.Message}");
+		}
+	}
+
+	public static async Task Update(long id, string title, string author, string content)
+	{
+		try
+		{
+			var parameters = new 
+			{ 
+				BlogId = id, 
+				BlogTitle = title, 
+				BlogAuthor = author, 
+				BlogContent = content
+			};
+			int result = await _dapperService.ExecuteAsync(Query.UpdateBlogQuery, parameters);
+
+			Console.WriteLine(result > 0 ? "Update Successful" : "Update Failed");
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine($"Error updating blog: {ex.Message}");
 		}
 	}
 
