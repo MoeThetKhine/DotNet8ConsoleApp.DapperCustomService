@@ -20,5 +20,12 @@ namespace DotNet8ConsoleApp.DapperCustomService
 			using var db = CreateConnection();
 			return db.Query<T>(query, parameters).ToList();
 		}
+
+		public async Task<List<T>> QueryAsync<T>(string query, object? parameters = null)
+		{
+			using var db = CreateConnection();
+			var result = await db.QueryAsync<T>(query, parameters);
+			return result.ToList();
+		}
 	}
 }
